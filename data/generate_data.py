@@ -48,4 +48,13 @@ for user_id in range(NUM_USERS):
 np.save("data/out/candidate.npy", candidate_data, allow_pickle=True)
 np.save("data/out/ranking.npy", ranking_data, allow_pickle=True)
 
+# Save as text files for manual inspection
+with open("data/out/candidate.txt", "w") as f:
+    for item in candidate_data:
+        f.write(f"{item}\n")
+
+with open("data/out/ranking.txt", "w") as f:
+    for item in ranking_data:
+        f.write(f"{item}\n")
+
 print("Data generated in data/out/")
